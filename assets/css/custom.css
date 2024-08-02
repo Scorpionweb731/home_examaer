@@ -1,0 +1,225 @@
+body p{
+    color: rgb(97, 106, 114);
+    font-size: 16px;
+}
+.main-nav a h1 img{
+width: 160px;
+margin-top: -10px;
+
+}#book_a_demo a{
+    background-color:white ;
+   color: #7a6ad8;
+   font-weight: bold;
+}
+
+.about2 .container h2{
+    font-size: 30px;
+}
+.about2 .container li{
+    font-size: 25px;
+    color: white;
+}
+
+.about2 .container .col-lg-5 p{
+    text-align: justify;
+}
+
+.features .container img{
+    width: 70px;
+}
+.features #server-img{
+    color: white;
+    font-size: 60px;
+    padding-top: 60px;
+}
+
+.testimonial .container h6{
+    text-align: center;
+}
+.testimonial .container h2{
+    text-align: center;
+}
+.testimonial .container .section-heading{
+    margin-bottom: 100px;
+}
+/* #product4thsvg{height: 100px;} */
+.career_form .container select{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgba(249, 235, 255, 0.15);
+    border: 0;
+    outline: none;
+    font-weight: 300;
+    padding: 0px 20px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+}
+.career_form .container select option{
+    color: rgb(79, 74, 74);
+}
+
+.career_form .container #showcase_file{
+    cursor: pointer;
+    background-color: white;
+    color: #7a6ad8;
+    font-weight: bold;
+}
+.career_form .container #hidden_file{
+    display: none;
+}
+
+.career_form .container #career_page_offer{
+    padding: 30px 90px;
+    background-color: white;
+    margin-top: 40px;
+    border-radius: 25px;
+    border-top-right-radius:170px;
+    border-bottom-right-radius:170px;
+}
+.nep{
+    font-weight: bold;
+}
+/* contact form */
+
+.contact_location{
+margin-top: 50px;
+background-color: #fff;
+border-radius: 25px;
+padding: 20px
+}
+.contact_location span{
+    font-weight: bold;
+    font-size: 20px;
+    color: #7a6ad8;
+}
+
+
+/* toggle career and contact form */
+.career_form,
+.contact_form {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  padding: 10px;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.career_form.show,
+.contact_form.show {
+  display: block;
+  height: auto;
+}
+
+
+.toggle_buttons{
+    /* background-color:#f1f0fe ; */
+    text-align: center;
+    padding: 40px;
+    border-top-right-radius:170px;
+    border-bottom-right-radius:170px;
+}
+.toggle_buttons button{
+    width: 100px;
+    margin: 3px;
+    border-radius: 50px;
+    font-weight: bold;
+    color:white;
+    background-color: #7a6ad8;
+    border: 1px solid #7a6ad8;    
+    padding: 10px;
+    transition: 0.5s ease;
+}
+.toggle_buttons button:hover{
+
+    transition: 0.6s;
+}
+
+/* only for toggle
+.toggle_button_show{
+    color: #7a6ad8;
+    background-color: white;
+    border: 1px solid #7a6ad8;   
+} */
+
+
+
+
+
+/* product item hover effect custom */
+.product_item p{
+    text-align: justify;
+
+}
+.product_item {
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    max-height: 400px; /* Default maximum height */
+    /* overflow: hidden; Ensure content fits within the container */
+  }
+  
+  .product_item.hovered {
+    transform: scale(1.05); /* Slightly scale up the item */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhanced shadow */
+    background-color: #f9f9f9; /* Change background color */
+    max-height: 600px; /* Adjust to accommodate expanded content */
+  }
+  
+/* Default styling for the modal trigger button */
+.modalTriggerBtn {
+    transition: all 0.5s ease-in-out; /* Smooth transition for all properties */
+    width: 150px; /* Default width */
+    height: 40px; /* Default height */
+    padding: 10px; /* Default padding */
+    background-color: #7a6ad8; /* Default background color */
+    color: #fff; /* Default text color */
+    border-radius: 5px; /* Default border radius */
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: center; /* Center text */
+    line-height: 20px; /* Center text vertically */
+    opacity: 1; /* Default opacity */
+  }
+  
+  /* Styles for the button when the parent product_item is hovered */
+  .product_item.hovered .modalTriggerBtn.animated {
+    width: 430px; /* Increased width on hover */
+    height: 60px; /* Increased height on hover */
+    padding: 20px; /* Increased padding on hover */
+    background-color: #7a6ad8; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+    border-radius: 10px; /* Round the corners on hover */
+    opacity: 0; /* Fade out the button on hover */
+  }
+  
+
+/* // scrolltoTop button */
+.container-scrolltotop {
+    position: fixed; /* Fixed positioning */
+    bottom: 10px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+#scrolltotop{
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: #7a6ad8;
+    border-radius: 50px;
+    padding: 18px 22px;
+    border: 1px solid #7a6ad8;
+    cursor: pointer;
+    margin: 30px;
+    transition: 0.6s ease;
+}
+#scrolltotop:hover{
+    background-color: white;
+    color: #7a6ad8;
+    border: 1px solid #7a6ad8;
+}
