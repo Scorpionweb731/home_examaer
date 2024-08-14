@@ -1659,7 +1659,7 @@ footer {
 
 footer p {
   text-align: center;
-  line-height: 150px;
+  padding-top: 40px;
   color: #fff;
   font-weight: 400;
 }
