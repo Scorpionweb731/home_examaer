@@ -1,17 +1,11 @@
 
-const form = document.querySelector('.career_form_validate');
-
-form.addEventListener('submit',(e)=>{
-    e.preventDefault();
+function validateform(){
     let hidden_file = document.querySelector('#hidden_file');
-    
+    console.log(hidden_file)
     if (hidden_file.files.length === 0) {
       alert('Please upload a resume.');
+      return false; // Prevent form submission
     }else{
-        try {
-            form.submit();
-        } catch (error) {
-            console.error('Error submitting form:', error);
-        }
+        return true; //
     }     
-})
+}
