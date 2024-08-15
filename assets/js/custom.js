@@ -123,7 +123,7 @@
 	    $(document).on("scroll", onScroll);
 	    
 	    //smoothscroll
-	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
+	    $('.scroll-to-section').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
 	        
@@ -138,7 +138,7 @@
 	        $('html, body').stop().animate({
 	            scrollTop: (target.offset().top) - 79
 	        }, 500, 'swing', function () {
-	            window.location.hash = target;
+	            // window.location.hash = target;
 	            $(document).on("scroll", onScroll);
 	        });
 	    });

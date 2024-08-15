@@ -2,10 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById('scrolltotop');
-  
+       scrollToTopBtn.style.display = 'none';
+       
     // Show or hide the button based on scroll position
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) { // Show button after scrolling down 300px
+      if (window.scrollY > 700) { // Show button after scrolling down 300px
         scrollToTopBtn.style.display = 'block';
       } else {
         scrollToTopBtn.style.display = 'none';
