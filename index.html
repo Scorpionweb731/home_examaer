@@ -696,6 +696,46 @@ Education Policy 2020.">
       <button class="showContactButton" style="background-color: white;color: #7a6ad8;" >Contact</button>
       <button class="showCareerButton" >Career</button>
     </div>
+
+    <!-- Success modal -->
+    <div class="modal fade" id="success-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-success">Success!</h5>
+            <button type="button" class="close btn btn-danger rounded-pill px-3" onclick="closeSuccessModal()" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fa-solid fa-times"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Form submitted successfully!
+            We will get back to you soon.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error modal -->
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-danger">Error!</h5>
+            <button type="button" class="close btn btn-danger rounded-pill px-3" onclick="closeErrorModal()" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fa-solid fa-times"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Error submitting form!</p><span id="error-message"></span>
+            <p>Please try again</p>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
     <!-- career section-->
@@ -713,7 +753,8 @@ Education Policy 2020.">
           </div>
           <div class="col-lg-6">
             <div class="contact-us-content">
-              <form class="contact-form" action="careerform" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
+              <!-- <form class="contact-form" action="careerform" method="post" enctype="multipart/form-data" id="career-form" onsubmit="return validateform()"> -->
+              <form class="contact-form" method="post" enctype="multipart/form-data" ajax="true">
                 <div class="row">
                   <div class="col-lg-12">
                     <fieldset>
@@ -744,8 +785,8 @@ Education Policy 2020.">
                     <fieldset>
                       <input
                         type="phone"
-                        name="phone"
-                        id="phone"
+                        name="contact"
+                        id="contact"
                         placeholder="Phone number"
                         required
                         autocomplete="phone"
@@ -754,7 +795,7 @@ Education Policy 2020.">
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <select required class="form-select select_input" aria-label="Select Your designation" name="designation" id="designation">
+                      <select required class="form-select select_input" aria-label="Select Your designation" name="position" id="position">
                           <option style="display: none;">Select your Designation*</option>
                           <option value="solutionsArchitect">Solutions Architect</option>
                           <option value="devOps">DevOps</option>
@@ -772,8 +813,9 @@ Education Policy 2020.">
                   <div class="col-lg-12">
                     <fieldset>
                       <input
-                        name="linkedIn_profile"
-                        id="linkedIn_profile"
+                        type="url"
+                        name="linkedin"
+                        id="linkedin"
                         placeholder="LinkedIn Profile"
                       ></input>
                     </fieldset>
@@ -829,7 +871,7 @@ Education Policy 2020.">
           </div>
           <div class="col-lg-6">
             <div class="contact-us-content">
-              <form class="contact-form" action="contactform" method="post">
+              <form class="contact-form" ajax="true">
                 <div class="row">
                   <div class="col-lg-12">
                     <fieldset>
@@ -846,7 +888,7 @@ Education Policy 2020.">
                   <div class="col-lg-12">
                     <fieldset>
                       <input
-                        type="name"
+                        type="text"
                         name="institute"
                         id="institute"
                         placeholder="Institute Name..."
@@ -864,14 +906,14 @@ Education Policy 2020.">
                         pattern="[^ @]*@[^ @]*"
                         placeholder="Your E-mail..."
                         autocomplete="email"
-                        required=""
+                        required
                       />
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
                       <input
-                        type="name"
+                        type="text"
                         name="location"
                         id="location"
                         placeholder="Location"
@@ -884,8 +926,8 @@ Education Policy 2020.">
                     <fieldset>
                       <input
                         type="phone"
-                        name="phone"
-                        id="phone"
+                        name="contact"
+                        id="contact"
                         placeholder="Phone"
                         autocomplete="phone"
                         required
@@ -896,8 +938,8 @@ Education Policy 2020.">
                     <fieldset>
                       <textarea
                         type="text"
-                        name="textarea"
-                        id="textarea"
+                        name="message"
+                        id="message"
                         placeholder="Message"
                         autocomplete="text"
                         required
@@ -907,23 +949,31 @@ Education Policy 2020.">
                   <div class="col-lg-12">
                     <fieldset>
                       <input
-                        type="date"
-                        name="date"
-                        id="date"
-                        autocomplete="date"
+                        type="datetime-local"
+                        name="schedule"
+                        id="schedule"
+                        autocomplete="datetime-local"
                         required
                       />
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button
+                      <input type="button"
+                      id="form-submit"
+                      class="orange-button"
+                      value="Submit"
+                      onclick="submitForm('contactForm')"
+                      />
+                      <!-- <button
                         type="submit"
                         id="form-submit"
                         class="orange-button"
+                        value="Submit"
+                        onclick="submitForm('myForm')"
                       >
                         Book Now
-                      </button>
+                      </button> -->
                     </fieldset>
                   </div>
                 </div>
@@ -975,12 +1025,14 @@ Education Policy 2020.">
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/moment.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
     <!-- custom js -->
     <script src="assets/js/career_form_submission.js"></script>
+    <script src="assets/js/contact_form_submission.js"></script>
     <script src="assets/js/hover.js"></script>
     <script src="assets/js/toggle_form.js"></script>
     <script src="assets/js/scrolltotopbtn.js"></script>
