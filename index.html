@@ -753,8 +753,8 @@ Education Policy 2020.">
           </div>
           <div class="col-lg-6">
             <div class="contact-us-content">
-              <!-- <form class="contact-form" action="careerform" method="post" enctype="multipart/form-data" id="career-form" onsubmit="return validateform()"> -->
-              <form class="contact-form" action="careerform" method="post" enctype="multipart/form-data" id="careerForm" ajax="true">
+              <form class="contact-form" action="#careerform" method="post" enctype="multipart/form-data" id="careerForm" onsubmit="(e)=>{e.preventDefault()}">
+                <!-- <form class="contact-form" action="careerform" method="post" enctype="multipart/form-data" id="careerForm" ajax="true"> -->
                 <div class="row">
                   <div class="col-lg-12">
                     <fieldset>
@@ -786,7 +786,7 @@ Education Policy 2020.">
                       <input
                         type="phone"
                         name="contact"
-                        id="contact"
+                        id="phone"
                         placeholder="Phone number"
                         required
                         autocomplete="phone"
@@ -833,13 +833,15 @@ Education Policy 2020.">
                     </fieldset>
                     </div>
                   
+                  
                   <div class="col-lg-12">
                     <fieldset>
                       <button
-                        type="submit"
+                        type="button"
                         id="form-submit"
                         class="orange-button"
-                      >
+                        onclick="submitForm('careerForm')"
+                        >
                        Apply
                       </button>
                     </fieldset>
@@ -871,7 +873,7 @@ Education Policy 2020.">
           </div>
           <div class="col-lg-6">
             <div class="contact-us-content">
-              <form class="contact-form" action="#some" id="contactForm" ajax="true">
+              <form class="contact-form" action="#some" id="contactForm" onsubmit="(e)=>{e.preventDefault()}">
                 <div class="row">
                   <div class="col-lg-12">
                     <fieldset>
@@ -927,7 +929,7 @@ Education Policy 2020.">
                       <input
                         type="phone"
                         name="contact"
-                        id="contact"
+                        id="phone"
                         placeholder="Phone"
                         autocomplete="phone"
                         required
@@ -1031,8 +1033,8 @@ Education Policy 2020.">
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
     <!-- custom js -->
-    <script src="assets/js/career_form_submission.js"></script>
-    <script src="assets/js/contact_form_submission.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/form_submission.js"></script>
     <script src="assets/js/hover.js"></script>
     <script src="assets/js/toggle_form.js"></script>
     <script src="assets/js/scrolltotopbtn.js"></script>
