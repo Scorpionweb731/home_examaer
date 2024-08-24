@@ -1,9 +1,9 @@
 function submitForm(formId) {
 	if ( formId === 'contactForm' )
 	{
-
 		const form = document.getElementById(formId);
 		const formData = new FormData(form);
+		console.log(formData);
 		const jsonData = {};
 		
 		for (const [key, value] of formData) {
@@ -26,11 +26,11 @@ function submitForm(formId) {
 		
 		xhr.onload = function() {
 			if (xhr.status === 200) {
-			  console.log('Form submitted successfully!');
+			  console.log('Contact Form submitted successfully!');
 			  $('#success-modal').modal('show');
 			  // You can also update the UI or display a success message here
 			} else {
-			  console.error('Error submitting form:', xhr.statusText);
+			  console.error('Error submitting contact form:', xhr.statusText);
 			  $('#error-modal').modal('show');
 			  // You can also display an error message to the user here
 			}
@@ -40,10 +40,42 @@ function submitForm(formId) {
 	
 		return false;
 	}
-	elif ( formId === 'careerForm' )
+	else if ( formId === 'careerForm' )
 	{
+		if(validateform()){
+			const form = document.getElementById(formId);
+			// const resume =  document.querySelector('#hidden_file');
+			// // console.log(resume);
+			const formData = new FormData(form);
+			// console.log(formData);
+			const jsonData = {};
+			for (const [key, value] of formData) {
+					jsonData[key] = value;
+			}
 		
-	}
+			const xhr = new XMLHttpRequest();
+			// xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/career/', true);
+			xhr.open('POST', form.action, true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+				  console.log('Career Form submitted successfully!');
+				  $('#success-modal').modal('show');
+				  // You can also update the UI or display a success message here
+				} else {
+				  console.error('Error submitting Career form:', xhr.statusText);
+				  $('#error-modal').modal('show');
+				  // You can also display an error message to the user here
+				}
+			};
+		
+			xhr.send(JSON.stringify(jsonData));
+		
+			return false;
+		}
+		}
+		
 }
 
 function closeErrorModal() {
