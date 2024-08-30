@@ -50,8 +50,10 @@ function submitForm(formId) {
 			// // console.log(resume);
 			const formData = new FormData(form);
 
-			//const resume = document.querySelector('#hidden_file');
+			const resume = document.querySelector('#hidden_file');
+			const actualResume = resume.files[0];
 
+			formData.append('resume', actualResume);
 			// console.log(formData);
 			//const jsonData = {};
 			//for (const [key, value] of formData) {
