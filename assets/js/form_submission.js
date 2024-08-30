@@ -20,8 +20,8 @@ function submitForm(formId) {
 		}
 		
 		const xhr = new XMLHttpRequest();
-		// xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/contact/', true);
-		xhr.open('POST', form.action, true);
+		xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/contact/', true);
+		//xhr.open('POST', form.action, true);
 		xhr.setRequestHeader('Content-Type', 'application/json');
 		
 		xhr.onload = function() {
@@ -54,8 +54,8 @@ function submitForm(formId) {
 			}
 		
 			const xhr = new XMLHttpRequest();
-			// xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/career/', true);
-			xhr.open('POST', form.action, true);
+			xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/career/', true);
+			//xhr.open('POST', form.action, true);
 			xhr.setRequestHeader('Content-Type', 'application/json');
 			
 			xhr.onload = function() {
