@@ -23,10 +23,13 @@ function submitForm(formId) {
 		xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/contact/', true);
 		//xhr.open('POST', form.action, true);
 		xhr.setRequestHeader('Content-Type', 'application/json');
-		
+
+		const servResponse = '';
 		xhr.onload = function() {
-			if (xhr.status === 200) {
-			  console.log('Contact Form submitted successfully!');
+			if (xhr.status === 200 || xhr.status == 201 ) {
+				var servResponse = JSON.parse( xhr.responseText );
+				console.log(servResponse);
+			  //console.log('Contact Form submitted successfully!');
 			  $('#success-modal').modal('show');
 			  // You can also update the UI or display a success message here
 			} else {
