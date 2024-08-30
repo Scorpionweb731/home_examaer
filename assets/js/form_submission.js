@@ -50,10 +50,6 @@ function submitForm(formId) {
 			// // console.log(resume);
 			const formData = new FormData(form);
 
-			const resume = document.querySelector('#hidden_file');
-			const actualResume = resume.files[0];
-
-			formData.append('resume', actualResume);
 			// console.log(formData);
 			//const jsonData = {};
 			//for (const [key, value] of formData) {
@@ -66,6 +62,10 @@ function submitForm(formId) {
 			xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/career/', true);
 			//xhr.open('POST', form.action, true);
 			//xhr.setRequestHeader('Content-Type', 'application/json');
+			
+			if ( formData.resume ) {
+				xhr.setRequestHeader( 'Content-Type', 'application/pdf' );
+			}
 			
 			xhr.onload = function() {
 				if (xhr.status >= 200 && xhr.status <300 ) {
