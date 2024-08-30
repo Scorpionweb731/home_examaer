@@ -24,13 +24,10 @@ function submitForm(formId) {
 		//xhr.open('POST', form.action, true);
 		xhr.setRequestHeader('Content-Type', 'application/json');
 
-		const servResponse = '';
 		xhr.onload = function() {
-			if (xhr.status === 200 || xhr.status == 201 ) {
+			if (xhr.status >= 200 && xhr.status < 300 ) {
 				var servResponse = JSON.parse( xhr.responseText);
-				console.log(servResponse);
 				document.querySelector('#successMessage').innerHTML = servResponse.message;
-			  //console.log('Contact Form submitted successfully!');
 			  $('#success-modal').modal('show');
 			  // You can also update the UI or display a success message here
 			} else {
@@ -52,31 +49,39 @@ function submitForm(formId) {
 			// const resume =  document.querySelector('#hidden_file');
 			// // console.log(resume);
 			const formData = new FormData(form);
+
+			//const resume = document.querySelector('#hidden_file');
+
 			// console.log(formData);
-			const jsonData = {};
-			for (const [key, value] of formData) {
-					jsonData[key] = value;
-			}
+			//const jsonData = {};
+			//for (const [key, value] of formData) {
+			//		jsonData[key] = value;
+			//}
+
+			
 		
 			const xhr = new XMLHttpRequest();
 			xhr.open('POST', 'https://newep.pythonanywhere.com/api/v1/career/', true);
 			//xhr.open('POST', form.action, true);
-			xhr.setRequestHeader('Content-Type', 'application/json');
+			//xhr.setRequestHeader('Content-Type', 'application/json');
 			
 			xhr.onload = function() {
-				if (xhr.status === 200) {
-				  console.log('Career Form submitted successfully!');
+				if (xhr.status >= 200 && xhr.status <300 ) {
+					var servResponse = JSON.parse( xhr.responseText);
+					document.querySelector('#successMessage').innerHTML = servResponse.message;
 				  $('#success-modal').modal('show');
 				  // You can also update the UI or display a success message here
 				} else {
+					document.querySelector('#successMessage').innerHTML = '';
 				  console.error('Error submitting Career form:', xhr.statusText);
 				  $('#error-modal').modal('show');
 				  // You can also display an error message to the user here
 				}
 			};
 		
-			xhr.send(JSON.stringify(jsonData));
-		
+			//xhr.send(JSON.stringify(jsonData));
+
+			xhr.send(formData);
 			return false;
 		}
 		}
