@@ -27,7 +27,7 @@ function submitForm(formId) {
 		const servResponse = '';
 		xhr.onload = function() {
 			if (xhr.status === 200 || xhr.status == 201 ) {
-				var servResponse = JSON.parse( xhr.responseText );
+				var servResponse = JSON.parse( xhr.responseText.message );
 				console.log(servResponse);
 				document.querySelector('#successMessage').innerHTML = servResponse;
 			  //console.log('Contact Form submitted successfully!');
