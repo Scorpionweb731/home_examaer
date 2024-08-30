@@ -27,9 +27,9 @@ function submitForm(formId) {
 		const servResponse = '';
 		xhr.onload = function() {
 			if (xhr.status === 200 || xhr.status == 201 ) {
-				var servResponse = JSON.parse( xhr.responseText.message );
+				var servResponse = JSON.parse( xhr.responseText);
 				console.log(servResponse);
-				document.querySelector('#successMessage').innerHTML = servResponse;
+				document.querySelector('#successMessage').innerHTML = servResponse.message;
 			  //console.log('Contact Form submitted successfully!');
 			  $('#success-modal').modal('show');
 			  // You can also update the UI or display a success message here
