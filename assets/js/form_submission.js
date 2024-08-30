@@ -34,6 +34,7 @@ function submitForm(formId) {
 			  $('#success-modal').modal('show');
 			  // You can also update the UI or display a success message here
 			} else {
+				document.querySelector('#successMessage').innerHTML = '';
 			  console.error('Error submitting contact form:', xhr.statusText);
 			  $('#error-modal').modal('show');
 			  // You can also display an error message to the user here
