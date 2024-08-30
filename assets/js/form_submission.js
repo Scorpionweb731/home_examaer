@@ -50,7 +50,7 @@ function submitForm(formId) {
 			// // console.log(resume);
 			const formData = new FormData(form);
 
-			// console.log(formData);
+			console.log(formData);
 			//const jsonData = {};
 			//for (const [key, value] of formData) {
 			//		jsonData[key] = value;
