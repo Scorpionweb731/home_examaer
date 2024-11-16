@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found</title>
+    <link rel="shortcut icon"  href="./assets/images/logo.png" type="image/svg"/>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: #7a6ad8;
+        }
+        .container{
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            margin: 80px 100px;
+            padding: 150px 90px;
+            background-color: white;
+            border-radius: 20px;
+            border-top-left-radius: 250px;
+            border-bottom-left-radius: 250px;
+        }
+        .container .col-6 img{
+            width: 500px;
+        }
+        .content h1{
+            font-size: 90px;
+            color: #ff6584;
+        }
+        .content h2{
+            font-size: 50px;
+        }
+        .content button{
+            width: 300px;
+            padding: 20px 30px;
+            margin:20px 0px ;
+            border-radius: 30px;
+            border: 0;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #7a6ad8;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .content button:hover{
+            background-color: white; 
+            transition: 0.4s;
+            color: black;
+            border: 1px solid #ff6584;
+        }
+        @media screen and (max-width: 1024px) {
+            .container{
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            margin: 170px 70px;
+            padding: 130px 90px;
+            background-color: white;
+            border-radius: 20px;
+            border-top-left-radius: 250px;
+            border-bottom-left-radius: 250px;
+        }
+        .container .col-6 img{
+            width: 350px;
+        }
+        .content h1{
+            font-size: 60px;
+            color: #ff6584;
+        }
+        .content h2{
+            font-size: 40px;
+        }
+        .content button{
+            width: 240px;
+            padding: 18px 26px;
+            margin:20px 0px ;
+            border-radius: 30px;
+            border: 0;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #7a6ad8;
+            color: white;
+            cursor: pointer;
+        }
+        
+        
+        
+        }
+        @media screen and (max-width: 768px) {
+            
+            .container{
+                display: block;
+                text-align: center;
+                margin: 230px 30px;
+                padding: 20px 10px;
+                border-radius: 10px;
+            }
+            .container .col-6 img{
+            width: 200px;
+            margin: 20px;
+            }
+            .content h1{
+            font-size: 70px;
+            color: #ff6584;
+        }
+        .content h2{
+            font-size: 25px;
+        }
+        .content button{
+            width: 200px;
+            padding: 10px 20px;
+            margin:20px 0px ;
+            border-radius: 30px;
+            border: 0;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #7a6ad8;
+            color: white;
+            cursor: pointer;
+        }
+        }
+        @media screen and (max-width: 425px) {
+            
+            .container{
+                display: block;
+                text-align: center;
+                margin: 60px 30px;
+                padding: 40px 40px;
+                border-radius: 10px;
+            }
+            .container .col-6 img{
+            width: 200px;
+            }
+            .content h1{
+            font-size: 70px;
+            color: #ff6584;
+        }
+        .content h2{
+            font-size: 25px;
+        }
+        .content button{
+            width: 200px;
+            padding: 10px 20px;
+            margin:20px 0px ;
+            border-radius: 30px;
+            border: 0;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #7a6ad8;
+            color: white;
+            cursor: pointer;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-6">
+            <div class="img">
+                <img src="assets/images/404.svg" alt="Error 404">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="content">
+                <h1>404</h1>
+                <h2>Oops ! Page Not Found</h2>
+                <a href="/" title="home"><button>Back to home </button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.body.addEventListener('click',()=>{
+           window.location.replace('/')
+        })
+    </script>
+</body>
+</html>
