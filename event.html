@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examaer | The NEP based Application</title>
+    <link rel="shortcut icon" href="/home_examaer/assets/images/logo.png" type="image/svg+xml">
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Headings and Paragraphs */
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Left Sidebar */
+.sidebar-left {
+  width: 240px; /* Reduced width */
+  background-color: #e3e2f4;
+  height: 100vh;
+  padding: 20px;
+  
+}
+
+.sidebar-left-content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sidebar-left-content img {
+  margin-top: 50px;
+  width: 200px;
+}
+
+.sidebar-left-content .btn {
+  width: 120px;
+  margin: 3px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #7a6ad8;
+  border: 1px solid silver;
+  padding: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar-left-content .btn:hover {
+  background-color: #7a6ad8;
+  color: white;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.content .row .logo {
+  margin-top: 10px;
+}
+
+.content .row .logo img {
+  width: 90px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.row .info {
+  margin-top: 10px;
+}
+
+/* Right Sidebar (Footer) */
+.sidebar-right {
+  width: 240px; /* Reduced width */
+  background-color: #7a6ad8;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Footer */
+.footer {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #e3e2f4;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  color: #f1f0fe;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #f1f0fe;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.poweredby {
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 0 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.poweredby img {
+  width: 100px;
+  padding: 4px;
+}
+
+.poweredby .copyright {
+  color: #7a6ad8;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Scrollbars */
+.sidebar-right::-webkit-scrollbar,
+.sidebar-left::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb,
+.sidebar-left::-webkit-scrollbar-thumb {
+  background-color: #7a6ad8;
+  border-radius: 4px;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb:hover,
+.sidebar-left::-webkit-scrollbar-thumb:hover {
+  background-color: #5f4dbb;
+}
+
+/* 768px */
+
+@media screen and (max-width: 768px) {
+  .sidebar-left {
+    width: 160px;
+  }
+  h2{
+    font-size: 16px;
+  }
+  h3{
+    font-size: 14px;
+  }
+  p{
+    font-size: 13px;
+  }
+  .sidebar-left-content .btn{
+    width: 100px;
+  }
+  .sidebar-left-content img{
+    margin-top: 100px;
+    width: 100px;
+  }
+  .poweredby .copyright{
+    font-size: 8px;
+  }
+  .poweredby img{
+    width: 70px;
+  }  
+}
+
+@media screen and (max-width: 500px) {
+  .hero{
+    display: block;
+  }
+  .sidebar-left{
+    height: 80px;
+    width: 100%;
+  }
+  .sidebar-left-content {
+    margin-top: 0;
+  }
+  .sidebar-left-content img{
+    display: none;
+  }
+  .content{
+    height: 500px;
+  }
+  .sidebar-right{
+    height: auto;
+    width: 100%;
+  }
+  .footer-container{
+    display: flex;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <aside class="sidebar-left">
+                <div class="sidebar-left-content">
+                    <div id="sidenav-links" class="buttons"></div>
+                    <div class="search">
+                        <img src="/home_examaer/assets/images/search.svg" alt="Search Icon">
+                    </div>
+                </div>
+            </aside>
+            
+            <main class="content">
+                <div class="row">
+                    <div class="logo">
+                        <img id="college-logo" src="" alt="College Logo">
+                    </div>
+                    <div class="info">
+                        <h2 id="college-heading"></h2>
+                        <h3 id="college-subheading"></h3>
+                        <p id="college-tagline"></p>
+                    </div>
+                </div>
+            </main>
+            
+            <aside class="sidebar-right">
+                <footer class="footer">
+                    <div class="footer-container">
+                        <div class="footer-section about">
+                            <h4>About Us</h4>
+                            <p id="about-us"></p>
+                        </div>
+                        <div class="footer-section other">
+                        <div class="footer-section">
+                            <h4>Address</h4>
+                            <p id="address"></p>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Contact</h4>
+                            <p id="contact-email"></p>
+                            <p id="contact-phone"></p>
+                            <p>Website: <a id="website-link" href="#" style="color: white;"></a></p>
+                        </div>
+                        <a href="https://examaer.com/">
+                            <div class="poweredby">
+                                <div class="copyright"><span>powered by</span></div>
+                                <div class="examaer-logo">
+                                    <img src="/home_examaer/assets/images/logo2.png" alt="Examaer Logo">
+                                </div>
+                            </div>
+                        </a>
+                      </div>
+                    </div>
+                </footer>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        // Data for dynamic content
+        const title = 'MGMM'
+        document.title = title;
+        const data = {
+            sidenavLinks: [
+                { name: "Result", href: "/result" },
+                { name: "Exam", href: "/exam" },
+                { name: "Admission", href: "/admission" }
+            ],
+            collegeInfo: {
+                logo: "/home_examaer/assets/images/mgmm-logo.webp",
+                heading: "Mata Gujri Mahila Mahavidyalaya, Jabalpur",
+                subHeading: "(Autonomous)",
+                tagline: "Re-Accredited A+ by NAAC"
+            },
+            footer: {
+                about: "Established in 1994, MGMM has grown into a premier institution for education and women empowerment, earning NAAC Grade A+ in 2017 and achieving autonomous status in 2012. Offering 28 courses across 20 departments, it serves 3327 students from diverse areas, including an IGNOU Study Center. MGMM now aspires to achieve the prestigious NAAC A++ grade, continuing its legacy of excellence.",
+                address: "Marahatal, Awadhpuri, Marhatal, Jabalpur, Madhya Pradesh 482002",
+                contact: {
+                    email: "support@archielite.com",
+                    phone: "(+01) 234 567 89",
+                    website: "https://matagujricollege.edu.in/"
+                }
+            }
+        };
+
+        // Populate sidenav links dynamically
+        const sidenavLinksContainer = document.getElementById("sidenav-links");
+        data.sidenavLinks.forEach(link => {
+            const anchor = document.createElement("a");
+            anchor.href = link.href;
+            anchor.innerHTML = `<button class="btn">${link.name}</button>`;
+            sidenavLinksContainer.appendChild(anchor);
+        });
+
+        // Populate college information dynamically
+        document.getElementById("college-logo").src = data.collegeInfo.logo;
+        document.getElementById("college-heading").textContent = data.collegeInfo.heading;
+        document.getElementById("college-subheading").textContent = data.collegeInfo.subHeading;
+        document.getElementById("college-tagline").textContent = data.collegeInfo.tagline;
+
+        // Populate footer dynamically
+        document.getElementById("about-us").textContent = data.footer.about;
+        document.getElementById("address").textContent = data.footer.address;
+        document.getElementById("contact-email").textContent = `Email: ${data.footer.contact.email}`;
+        document.getElementById("contact-phone").textContent = `Phone: ${data.footer.contact.phone}`;
+        const websiteLink = document.getElementById("website-link");
+        websiteLink.href = data.footer.contact.website;
+        websiteLink.textContent = data.footer.contact.website;
+
+    </script>
+</body>
+</html>
